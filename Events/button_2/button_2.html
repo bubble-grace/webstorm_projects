@@ -1,0 +1,31 @@
+<body>
+
+<canvas id='myCanvas'></canvas>
+
+<script type="text/javascript" src="init.js"> </script>
+<script type="text/javascript" src="button_2.js"> </script>
+
+<script>
+    let G = new Grid(width, height, 25, colArray[0][1], 0.3);
+    let R = new InteractiveButton(350, 100, 100, 50, "rgb(255,0,0)", colArray[0][1], "rgb(255,0,0)",colArray[2][2], 'red', colArray[0][1]);
+    let O = new InteractiveButton(350, 150, 100, 50, "rgb(255,69,0)", colArray[0][1], "rgb(255,69,0)",colArray[2][2], 'orange', colArray[0][1]);
+    let Y = new InteractiveButton(350, 200, 100, 50, "rgb(255,215,0)", colArray[0][1], "rgb(255,215,0)",colArray[2][2], 'yellow', colArray[0][1]);
+    let B = new InteractiveButton(350, 250, 100, 50, "rgb(0,0,255)", colArray[0][1], "rgb(0,0,255)",colArray[2][2], 'blue', colArray[0][1]);
+    let T = new InteractiveButton(350, 300, 100, 50, "rgb(0,215,0)", colArray[0][1],"rgb(0,215,0)",colArray[2][2], 'green', colArray[0][1]);
+    let M = new Manager()
+
+    let buttonSet = [R,O,Y,B,T]
+
+    function animate(){
+        ctx.clearRect(0,0, width, height);
+        G.update();
+        M.update();
+        for (let i=0; i<buttonSet.length; i++){
+            buttonSet[i].update();
+        }
+        window.requestAnimationFrame(animate)
+    }
+
+    animate();
+
+</script>

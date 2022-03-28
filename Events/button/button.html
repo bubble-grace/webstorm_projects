@@ -1,0 +1,27 @@
+<title></title>
+<body>
+
+<canvas id='myCanvas'></canvas>
+
+<script type="text/javascript" src="init.js"> </script>
+<script type="text/javascript" src="button.js"> </script>
+
+<script>
+    let G = new Grid(width, height, 25, colArray[0][1], 0.3);
+    let A = new InteractiveButton(100, 200, 100, 50, colArray[1][1], colArray[2][1], colArray[2][2],colArray[2][2], 'button', colArray[0][1]);
+    let B = new InteractiveButton(250, 200, 100, 50, colArray[1][1], colArray[2][1], colArray[2][2],colArray[2][2], 'button', colArray[0][1]);
+    let C = new InteractiveButton(400, 200, 100, 50, colArray[1][1], colArray[2][1], colArray[2][2],colArray[2][2], 'button', colArray[0][1]);
+
+
+    function animate(){
+        ctx.clearRect(0,0, width, height);
+        G.update();
+        A.update();
+        B.update();
+        C.update();
+        window.requestAnimationFrame(animate)
+    }
+
+    animate();
+
+</script>

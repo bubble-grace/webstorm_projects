@@ -1,0 +1,26 @@
+<title></title>
+<body>
+
+<canvas id='myCanvas'></canvas>
+
+<script type="text/javascript" src="init.js"> </script>
+<script type="text/javascript" src="point.js"> </script>
+
+<script>
+    let G = new Grid(width, height, 25, colArray[0][1], 0.3);
+    let I = new InteractiveBall(150, 200, 25,colArray[1][1], colArray[1][1], 0.3 );
+    let B = new InteractiveBall(50, 200, 25,colArray[1][1], colArray[1][1], 0.3 );
+    let C = new InteractiveBall(100, 200, 25,colArray[1][1], colArray[1][1], 0.3 );
+
+    function animate(){
+        ctx.clearRect(0,0, width, height);
+        G.update();
+        I.update();
+        B.update();
+        C.update();
+        window.requestAnimationFrame(animate)
+    }
+
+    animate();
+
+</script>

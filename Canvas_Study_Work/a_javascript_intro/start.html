@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java Script Intro</title>
+    <style>
+        #little-div{
+            background-color: fuchsia;
+            color: whitesmoke;
+            font-size: 3em;
+        }
+    </style>
+</head>
+<body>
+<div id="little-div">Hello</div>
+<script>
+    // declear a varible
+    let my_name = "Grace";
+    console.log(my_name);
+    let x = document.getElementById("little-div");
+    x.innerHTML = my_name;
+    x.style.backgroundColor = "rgb(0,200,0)";
+    x.style.width = "58%";
+
+    //loop
+    // declear the counter, upper limit, increment +1
+    for(let i=0 ; i<10 ; i++){
+        //console.log(i)
+        console.log(Math.pow(i, 6))
+    }
+    // a list but is called an array
+    A = []
+    A.push("Annie");
+    A.push("Emma");
+    A.push("Maddie");
+    A.push("Alyssa");
+    console.log(A);
+
+    for(let i=0; i< A.length ; i++){
+        console.log(A[i])
+    }
+
+    function reverseletters(n){
+        let nameLength = n.length;
+        let reversedName = ""
+        for(let i=nameLength - 1; i>=0 ; i--){
+            console.log(n.charAt(i))
+            reversedName += n.charAt(i)
+        }
+        return reversedName
+    }
+
+    reversedName = reverseletters("mirabelle")
+    console.log(reversedName)
+
+
+
+
+</script>
+</body>
+</html>
